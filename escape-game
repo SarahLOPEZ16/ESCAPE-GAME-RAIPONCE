@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Game : La Tour de Raiponce</title>
+    <style>
+        body {
+            font-family: 'Cursive', fantasy;
+            text-align: center;
+            background-color: #8e44ad;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            background: url('data:image/jpeg;base64,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'); /* Remplace mon-url par ton URL d'image */
+            background-size: cover;
+            animation: moveClouds 10s linear infinite;
+        }
+
+        @keyframes moveClouds {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            color: #333;
+        }
+
+        .container {
+            background: 
+                linear-gradient(rgba(128, 0, 128, 0.8), rgba(128, 0, 128, 0.8)), /* Violette avec transparence */
+                url('https://i.pinimg.com/474x/05/3b/6d/053b6d00dc3032a3842900e569074569.jpg'); /* Ton image de fond */
+            background-size: cover; /* L'image couvre tout le bloc */
+            background-position: center; /* L'image est centrée */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            color: #fff; /* Texte en blanc pour le contraste */
+        }
+	.hidden {
+  	    opacity: 0;
+  	    transition: opacity 1s ease-in-out;
+  	    display: none;
+	}
+	.visible {
+            opacity: 1;
+           display: block;
+	}
+
+
+        :root {
+            --player-color: #f1c40f;
+        }
+
+        h2 {
+            text-shadow: 0px 0px 8px rgba(255, 255, 0, 0.8), 
+                        0px 0px 12px rgba(255, 140, 0, 0.6);
+            transition: text-shadow 0.3s ease-in-out;
+        }
+
+        h2:hover {
+            text-shadow: 0px 0px 12px rgba(255, 255, 0, 1), 
+                         0px 0px 18px rgba(255, 140, 0, 0.8);
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button {
+            background: #f1c40f;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #f39c12;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        #avatar-selection {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .avatar:hover {
+            transform: scale(1.1);
+        }
+
+        .selected-avatar {
+            border: 2px solid var(--player-color);
+        }
+
+        #customization {
+            display: block;
+            background: rgba(138, 43, 226, 0.9); /* Violet transparent */
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+   </style>
+</head>
+<body>
+    <div id="customization" class="container">
+        <h2>Personnalisation</h2>
+        <label for="pseudo">Entrez votre pseudo :</label>
+        <input type="text" id="pseudo" placeholder="Votre nom">
+        
+        <label for="color">Choisissez une couleur :</label>
+        <input type="color" id="color">
+        
+        <h3>Choisissez un avatar :</h3>
+        <div id="avatar-selection">
+            <img src="data:image/jpeg;base64,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" class="avatar" onclick="selectAvatar(this)" alt="Raiponce">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHRvS-v-45lVdsZPl5IYLtFeAD2sNWnXfJpQ&s" class="avatar" onclick="selectAvatar(this)" alt="Flynn">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEhIQEhIVFRAVEBAVEBAQEA8PDxUQFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGisdHh8tLSstLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLf/AABEIAMIBAwMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAADAAECBAUGB//EADoQAAEDAwIDBAkDAgYDAAAAAAEAAhEDBCESMQVBUSJhcYEGEzKRobHB0fBCUuEUcgcjM2KCkhUWsv/EABsBAAIDAQEBAAAAAAAAAAAAAAEDAAIEBQYH/8QAKREAAgIBBAEEAQQDAAAAAAAAAAECEQMEEiExQRMiMlFhBRQzkXGxwf/aAAwDAQACEQMRAD8A2dSfUqwepa1w9x7fYH1JakDWnD0dwNgfUm1oOtR1obibAxchVqwaCScAST3KD6i530ivpHqgd/b8OQRS3MrkkoRszb26NV7n8icDo3kqFwURpQXCStCOTN2Gt24V63wPcqtNuwVppx+eCDAgVU4P5zVWoFZqHB/PzZVz9kUBiprQtnbeKz2bq7alRlTZpFXGlZ1q7EK/TKSworXrZE+9Y9QQt24H53rGrjP5umQZWSDNbIB6pF0IVtVxCM4rbB2jlZ47ZES9KVBwTq5nJByLTrEIAU8KAL9C86rTtK4cueaFZtKpaZlX3yrgpSvk6ZpLDKNWvCQs1t4HBEa6VaEdyuXYJy28R6JZOyYghX+HUgd1frWrSNlJ51GVAji3KzAlJHqUoJCdN3oXtZQlPqQpS1LztH0bcF1pa0AuTFylB3hzUUXVEAuQa9cAEk4RSFTyUK/vQxpPPkO9ctWcSSTkk58Ua6uzUdOY5DuQdMp8Y0YcuTcDSYMpFSYrmVuwtNWTgKvTGPNWanJVYSu/mggfJGdufP8APghtH1RQCKsUD81XP1RaZyoVNWg5adErHtytO2PJKkghqwwse8bBn3raOQsy+Zj85K0ASM1hhwVoqk75K1TMgLXjMGqjxYQpAJikE454zgU7SpAyokKECynCAAiSoVaDB5GytULwjdUWuT6lZSaKtHR2PEgCt6lfNcN15+2rCPTu3jmqTW/ktCW06urUbJSXLG8f1SV7BZdlRJUSVAuXHPc7iZcol6GXoT6iKQuUydSqsS/u9Z0j2R8Sp313PZHmfoqICbGNGTJkvgk0KT8BOAh1jsERQNTahjdFaEWVLVrRc4gNBJHICUSswgwQQehEFWuAVg2p5RjnMQPkuovrNlQdoA4/MpTn7qOLqP1j0NQ8co+378nDRnzKjpz5rcuuDEGWHyd9CgUOE1Hk7ADBn+FZyS5Ztj+oaaUN+9L/AD3/AEYzh91Ni17n0frNEiHjPsntR4FZeiCJ8DPUYRjJPodh1GLMrxyTLdueX5C0KDlmUCr9I7e5CQ9GiCqV2FYpux4IVyMFViBmFXEFWLcyEG6U7USPNbMZk1K9ochNKcBKE85gmqaHslKgCZalKi0pyoQaVNqiCnUAyQKkCk2AnJUKEpSQ0lCF8uQ3PUXOQXvXLSPaORJ9RZ19d/pG/Xp/Ka7u/wBLd+Z6KimJGXJkvhChTCYBTaFYUTaFWc6ZPU/BFrOxHVAKhGJv1R2BQo0nOw0E4nAlEr0H4phpDiOYIhvVRiMmeGNNtrgXDax1aurvhy+i72yrh1MHHMQ3bGFzFjwsNGVrU3FjYWXLJN8HidZkWaV+Q11dD2Ae04wPqfdKuDsN8lzbD/msc6fbgZjkV0N0/AP5KpLwIcapAxUqEzgdxOUK/wCENrtLmgCt3bP8e/vWf6Q8aZZUw9w1VHToZO8ZJ7gJE+IHOVhcC9M61SqAdJyJaW9mOgIg/FOhik1uidTQ4c174NL/AKWGtIMEQRuOYPMfnRXKXTqu+q+j9vcsFXSWue1rjmckfmVzHE+BvonqAPPy6p+SLirZ6NayCpT4/wBFKmf5TVim2OcHmFGqcJSNnZk3Y+aa1qQE97uqzHQB5/nzW3DyZNT8TQTFDaUQFOo5b7GDlKQmKfCgBki0p0+pQhFPskSlKhCTXqcoRak1Qq0GSUJSUAFe9Zt1dz2W+Z+yDdXZccYb05nxQR1WFRo9PPLfCHCk0JgFIoixwn1QFFxQ3vUJYzzKiU4Tc1AFik+OcbLc4bxQezVy3l3Lm6zSYhSpF7fDolSgmeY1WJTnLd3Z35oAgObsQgPp4VL0d4qP9N5lpwO49Fu1KEH82WSSadM5PoSUqZg3tv2QeYcDnZatwDoYTBmNtlOvbAtI5EIlvb6qA7MHBHa1TCl9D54+F+Dyr/Ei6L7v1YM6KbW6R1d2z8HN9wVr0E4BUq1WiMkg/wBrebiuyr+jJr1nVJY1rtJLtJfUPZA2wOXVdfwTh1G1bppjJ9p7svce8/QYXShluCij0Gkxr0otfRvUGhrWtGzQAPACFT4xR1Uyebc+IG4RG1lC4rDS7wM+5Nck40w5NPuTT6Zxl9ahw1N3zAAySSsioCJBwcyO9dCd+4/A8is3ittgvEAtHaAG8neVz48P8HO/S9e8bWGfT6f0c1e/dAAx+eCNdnKADj3ro4Dt6j4haJz5D5BW9KzJMz3D5BXqFRaZI5kuwpTKZaoBUAKUkzk7UCDpEJEJEwiAUqBdCHUrBU6tYlWUQl03CSpNaSJTq21B2gqjVFh5K7VoKk9hC56dnekqZPVt4JF3JC1bqOpAFk6lRRB28EMmVNm/uUIGCgzcqRPyTUKZdIG5D9t4a0k/JQjZicX4i7ZuKYJBcJyfsqPDr+qHgNcdJOWnIjwKu8S4LXc7s5pnIytL0Z9FKlR8Dl7dSOwwdO89yepQUTmuEpS6NGzqOgVQIEkEcjG8fnJd3we/FZgafbAlp/c1Y95YMp0/VtGGiB5c/FUuFXBZDgY0mQeiw58drgyanTJS4OzAlW+G0IZpiIJ2EAjkVRtq2rOMiQeXktBjNQA1Ob2mmWmDgzHgdlzvwY5Q8EKlIt2URckLReyUF9tKdDM0VxZsuHiD4+iuLzuPuVW9vHPaWAHIgxvB38MSrptVXrD9Iy48vqU56iVcDZ63UZFtpKymKcsdO4AE/FA16hPOIPQhXLwhjdPPme9Z1u7lyI+P4UcatHOzxql9HKcVo+rqFvLcHqDsqc7eBW96RUNTQ8bt3/tP8/Nc9U2C6Wm5O/i1HradSfa4ZKc+75IjHQgP3/PzopBy2+BT7NGjURSs+lVVj+pAVHAqHUS6FWfehV6tzKm0iTLrqoVavcKsJKcqJFiBekAmEI1NqsSyTThJSwkgCzbfbKpWspXR/wBOoutVyFI9RKBxd1ZuEkBUZ3XdVLGeS5/jHB3NmowY3c0cu8JilZnlBoxAUaiFXCsN2ViiJEqzwa4FOtSedg4avA4PwJVJzsJqbs+5Qlnpv/r1qTq9X3wHPDP+oMLQLGsbpa0NaNmtAAHkuY9GfSNoaKNYxGGVDtHIOPLxW7f3jGN1FwjlBmfDql3RdqNWYXHqwa09TgLK4dSULy4NepPLkOg+60LVgaJKXlkcbLP1J3HpGzYQ0ADYAADuGy17d8LBt6vOYHXn7ldp3rW8pPU5WJwbYqWFds6CncjkCfASndVf+0D+4gLCdxV3WFWqcQd1UUREpQj4N6q/9zx4N+6o17+nTB0jPXcnzWFXvj1WdXuyVdRbM8skn1waF1elxRLfJlZdn2neGfNazXfk/wAfb6rfjxVEy5Y1wDvaeoOadiCPguOqMIwdw4g+S7Ks7KxqloDcO6dl3vGfiCm4ZqF2O0ef09yfXZTs+FVagmAByLpHw3ULvhdallzZbzc06gPHmF09ar6tuMuOw5qg26qA9oET+4YP0Kn7ud3xRb91kbuuDAptT124VrilsGkPbhjjkD9LungqjwYW6M1JWjbCSkrRWDUVtNSYxIuRLWKQEBz0qj07WhQgzVJ1WFGoVWLyiEs+vSQQCmUAeriipigrTaamGLhnq3JFE2yG60HRaWhZnHLz1TCUaZW0cvx70XOatAd7qY+bfsuXdjHPaDgytm349Wp1NYMtJyw7ELdrWlpxFuppFOvGSIkn/cP1eO6cm12Z2lLo4NzkqZyr3GOC17YxUb2eVRuaZ8+R7is1pVxT4LlJ31VyiwAY25dFnU3YV20qNIg7+MKkkY9Zj3RT+jRokN8eQG6sirzd5N5BUG1Gt29/NDfXlJaMHqKKpGmb0qbb2FjGqourIbRLk32bTr/vQal8sd1VDNVFYxe2zTfcygvuIWe6sq1w8nnsmwxk20dDY3UHBW9TfqEjfouSsqGpoLTDuh2K1rK7LSGuEOHuPeOqvklJLgy5Y7vj2abnodbFQHnob38yrVVgeA8b4kcis6/fFVpOxbjyOfmEpvdG0Ixq2aLHdouiSBDR3qldvqB0Oc1zZhzW5LSdkv6jSf8Akz4wgW/D303Q4hxdkuGxn+UtJjUklySdSLmvYcmDH9wyPksUuXUsoxlcrXwT4lb9JK0zTpX2iLnwgOqJnulCIWw2ExlWGsQaVNGlQDIVAEBoyj1UJoRLInCSkHJKAPYmtUoUgEz3QFx6PRW2yLiAuN9L7kO7IPNaXGuMaZaN1xt3VLzJUXLLtUjPqBQbUc0y0kHqDBRqgQHBORnaNe39KrhjdD9NRkQW1ADI71kcQr0Kh1MpmkTu1rtVPyByPkguCC8IqKKuTJNKYPQCVH1qO0XvXkvsujzUhes21Qe/Cr+tDmwG9qBk9mI6dVn3LCMEEIbE2czOoOXsNv1veol6wqdZzBA2nmpsuSOvgSj6QlwXg2Nam1kgnosynXB/MqzQu9M94IVXFoVJtdEnFNKBUqySepPzUDURSKNNnQcFeNpzyCu3zgQ0fq1iD8T8ly1tdOY7U0weq1235quYdMQeW2wH396MrpivTe+/B2HDWzThU+L0CaRdGWHVt+nZ338lY4W/sq2K4DiD4x4rJifLTE5FtdowCQ5rXEFzCNNXTMgTLXY28fBdBZ06YZqbJaNnPMucdgB3LPfaPoP10BqpO3bIGk84nktOhqdBfGNmjl3k8yjK7orKS8Fau+Gk+JPzXEVasldZ6RVg2m6Nz2R57/CVyLWLoaWNJs2aRcNjShTlHc1M1oWo2BaZSlTDcKIYgVIVQoNUqz0Km9EKCwmS1pIAPaoVW/dDT4K3CrXzJafBcmXR6HG/ceeXriXE96o1AtG/ZD3DvVB6iHSKrwq7wrTwgPCYhMkVnhAerTmoTWjU2fZkSrITPhWVvUndQNNa14WjMj3rJqvnZFNs5U5TyMtUdJacKlcE9cdFat24MZB58/cq9dqiVMU006ZViVEhTd3KxZWJqSTMAErRGDY6GJyM+oTOMFGpvf0nv2XXWno5TaRu50Z1YA/MrVbb0mEN7MnkGhW22r8GqWmil7vBwdtb1qh0spuce76k4Hmuk4f6I1HZqvDf9rBqP/Y4+BXa0aLGtwB5IVS5AXOyZ31FUcbLkuVQVGKPQ+3Ayah79Yn5J7bg1GmdMESexUklp7ndCrVzxWBEqXB6uuSRLSYg7EJTnKuWK9yVtl2lZmnvtyKwvSC5NOow8iz4g/yF1NaWiBlv7Ty8CsjinDf6ik50Q5pOh45GASD3HCGPmQEtz+ytwnio2Oy1qz8SNiN1wdu54JxEHbYyt234hqpPYTB0ug9DCdsqQnJgqVooccvNb9IPZb/9c1QaENqLC6sY7VR0oxUYpIi4FQAKIXIZciXQempkqFNM9ygCNVqrwreCq7m5RChw9JTDAkgA9sQ6okKRKiSuWzvxVM4z0htCHagMLnnr0e+tQ8ELieLcNdTJIGFSL8Glq1aMZ6C5HeEJwTEKYFwQnNRyFEtVhbRWdSHRSbQEAnnsPqUUsRqB2aQXCcR7Q8FaLKSgNRtt8RnY9IWdeMg6Ruth4AOJI6dB4KsLH1lYNGxI371dR91syftt07Zm29kXGBz3K7Hh3CAymZ6fUK7wf0fY1uo+0CFtVKADHwP0nv2yupHHSs2Y8VdmNVt3mqW/px8lfpcMbGQPcJVinqD3jDsggRmCJ3WpQayoDpw4bsO4WGLybeFwanDEvlzZj/8Aj+QmO4lSbwRjsmf+zvuteiwtdnqtSrajTLVbDsk/dFGTPhw45Lhc/g8843wSm3TpBDi6Bknx3Wrwm0DQOQCNeNDriDs1ojxOSVYuXBjVh1rXqbYro4P6hTyVFUkVbklztLRJOwC3eH8OLKYByTJeNwSd/ss3htvHaPtH4DoujtKoODutel00sS3vs1afSzwxWR9nDekXoyCfWU+zPjAPQ93euOvqVWl2HtLXEd0ae4jde2XVuCJjxC43004c025fHaYQWnuJAI93yCtkxJSU4rjz+CubEv5Irjyvo86YFMlDUwnMUxOCgQiOCC4KEQekoVQmpvU3CVCEGOUXlNsk4yoQcPSQ4TKBo9t1JpUUlxz0lDkqtdWzXiCFYhKEKCnRw3GuE6CXN26LDLF6bd2geIK5PiPAnNJLRjoipV2WcU+Uc2WJtC0Klm8btPuUBauOzT7lexe0paFdt6RGGjMdrE53+itUOEVH8oXbWHCmlgcOy6AKjRtO0pmNpsXli0r8HHW/BqtYamtOoEbAAeZJ3Wjw7hIZV7Y7QDO5dnbUGtGkAQJORKy+It/zwetNvdkEz81d9WDF8qDtoBsjlJgc/FM5ktcNpa4dTkKyWJm0xOV3I8xTGWZPDapDnU6mcNc18ZLXbT8R5KxxCi4RUp+234joeoVJt6GVQ1w/QwCeYj7z7lu0qgcBHPb7LPi5jTJJ0ypaXrarZGHD2mcx1hXqVyY3WJe2hov9Yz2TvHIqxQuJM7H4FJy4r64YKUlyW7qyZVhxw79wwY+qCzhukyZPQnK0raHbe5aDaYjKVj4lckY8soQlbjyZFOlCK1qPWp6Sg6l0YtNWhynuVou0K04KpcUsmVGuY4Sxwgj7J9aM2pqEHf6JM1se5deRDx7Xa6fZ49x7hT7aqaZyN2O/czkfFZ7SvVfSLhDbmmWYFRsmm44z0PcfzZeV3VF1Nxa4EOBIcDggjBBS5Rrox58Wx/hjOKGVJr0zgqGYgMI7KiruTNfCIQtUIRRS6UIhQA2lJLKSIT2pOkkuMelY6QSSRKiUKgSSQl0GPZRrMHQe4KFOm3oPcEkko0lym0dFatfa8j8inSTcXyRnz/Fhnc1l8X/1af8Aa75tTJLX9mfD80aDPonpBJJdrH8F/hBl5OW40B6yj41fg4Qug4cP8k/8YSSXOh/J/Y3J8P6CXo7B8Fhs2PiEklsydlYdG9Ybt8PqtpJJIyfI5+t+SK91sVmpJK+HpjtL8RFPTOU6SZLpml9E62685/xBaBc4AzSpkwNzkSfID3JJJS/jRh1X8aOUcnYmSVDmiQk6SJAtNMUkkABAEkklCH//2Q==" class="avatar" onclick="selectAvatar(this)" alt="Pascal">
+        </div>
+        
+        <button onclick="saveCustomization()">Valider</button>
+    </div>
+
+
+<!-- Écran d'accueil -->
+<div id="start-screen" class="container hidden">
+    <h1>Bienvenue dans l'Escape Game : La Tour de Raiponce</h1>
+    <p>Vous êtes des soldats du royaume de Corona, où règne les parents de Raiponce. Vous avez comme mission de retrouver la princesse disparue. Vous avez croisé sur la route un jeune brigand, Flynn que vous avez suivi et qui vous a conduit droit à la tour de Raiponce. Mais vous vous retrouvez coincés à l'intérieur car la mère Gothel vous y a enfermé et vous avez 1 heure pour vous échapper et trouver Raiponce avant que la mère Gothel ne revienne. Toutes les réponses aux énigmes sont des codes chiffrés.</p>
+    <img src="https://i.pinimg.com/474x/05/3b/6d/053b6d00dc3032a3842900e569074569.jpg" class="image" alt="Raiponce">
+    <button id="start-button" onclick="startGame()">Démarrer le jeu</button>
+</div>
+<div id="inventory">Inventaire : <span id="inventory-items">Aucun objet</span></div>
+<div class="timer hidden" id="timer">Temps restant : 1:00:00</div>
+
+
+<div class="container hidden" id="step2">
+    <h2>Énigme 1 : Les passions de Raiponce⭐</h2>
+    <img src="https://i.pinimg.com/736x/3a/01/e9/3a01e9273fb87bdfee0863fe7c65e1c3.jpg" class="image" alt="Énigme 1">
+    <p>Partez à la recherche d'indices : votre premier objectif est de retrouver Raiponce et Flynn qui a surement du la rejoindre.✨⭐</p>
+    <div id="notes">
+        <h3>Zone de notes ✍️</h3>
+        <textarea id="playerNotes" placeholder="Écrivez vos indices ici..."></textarea>
+    </div>
+    <button onclick="revealHint('indice1_1')">Voir indice 1</button>
+    <button onclick="revealHint('indice1_2')">Voir indice 2</button>
+    <p id="indice1_1" class="hidden">Indice 1 : Il vous suffit de regarder un peu plus attentivement aux objets autour de vous. Raiponce adore les lumières, et fabrique même ses propres bougies. 🕯️🕯️🕯️</p>
+    <p id="indice1_2" class="hidden">Indice 2 : Bravo vous avez trouvé la première pièce du puzzle, dont Raiponce est friand 🧩🧩! Mais qu'en est-il du code ? Avez vous fait attention au nombre de lanternes qu'elle a dessiné ?🎨😊</p>
+    <input type="text" id="reponse1" placeholder="Entrez votre réponse">
+    <button onclick="verifierReponse('reponse1', '28', 'step3')">Valider</button>
+    <p id="message1"></p>
+</div>
+
+
+<div class="container hidden" id="step3">
+    <h2>Énigme 2 : La Tour⭐</h2>
+    <img src="https://tse1.mm.bing.net/th?id=OIP.lTuad6JnhxpoNetbvTJdIQHaHa&pid=Api" class="image" alt="Flynn Rider">
+    <p>Vous tombez nez à nez avec Flynn Rider ! Vous comptez l'arrêter sur-le-champ mais il vous propose un marché intéressant que vous acceptez immédiatement : ne pas l'arrêter en échange de repartir avec Raiponce et lui. Au moment où vous arrivez devant la porte, celle ci est verrouillée : il faut trouver la clef, le temps presse !🔒🚪</p>
+    <div id="notes">
+        <h3>Zone de notes ✍️</h3>
+        <textarea id="playerNotes" placeholder="Écrivez vos indices ici..."></textarea>
+    </div>
+    <button onclick="revealHint('indice2_1')">Voir indice 1</button>
+    <button onclick="revealHint('indice2_2')">Voir indice 2</button>
+    <p id="indice2_1" class="hidden">Indice 1 : le plan semble incomplet.🗺️ mais il vous conduira peut être à d'autres pièces du puzzle.🧩🧩 </p>
+    <p id="indice2_2" class="hidden">Indice 2 : Un peu de mathématique et de géométrie💪</p>
+    <input type="text" id="reponse2" placeholder="Entrez votre réponse">
+    <button onclick="verifierReponse('reponse2', 'PASCAL', 'step4')">Valider</button>
+    <p id="message2"></p>
+</div>
+
+<div class="container hidden" id="step4">
+    <h2>Énigme 3 : Le Code Secret✨</h2>
+    <button onclick="collectItem('Clé de la Tour')">Ramasser la Clé</button>
+    <img src="https://i.pinimg.com/736x/4c/b6/5d/4cb65df21dba8699c55ee48914526986.jpg" class="image" alt="Énigme 1">
+    <p>Vous avez trouvé Raiponce et les deux amis 💕💕💕(enfin,...) se retrouvent en se prenant dans leurs bras. Mais il faut sortir de cette tour avant que la mère Gothel ne rentre ! Pour notre princesse❤️ et son sauveur❤️, ils se sont échappés par la fenêtre grâce à sa longue chevelure blonde ; mais comment allez vous vous sortir de là ?!?🏰🕊️</p>
+    <div id="notes">
+        <h3>Zone de notes ✍️</h3>
+        <textarea id="playerNotes" placeholder="Écrivez vos indices ici..."></textarea>
+    </div>
+    <button onclick="revealHint('indice3_1')">Voir indice 1</button>
+    <button onclick="revealHint('indice3_2')">Voir indice 2</button>
+    <p id="indice3_1" class="hidden">Indice 1 : Chaque nombre représente une lettre du mot "RAIPONCE". Une autre pièce du puzzle en approche🧩🧩</p>
+    <p id="indice3_2" class="hidden">Indice 2 : La lumière est une source de chaleur précieuse lorsqu'on veut savoir ce qui est écrit sur une page vierge,...✨✨✨</p>
+    <input type="text" id="reponse3" placeholder="Entrez votre réponse">
+    <button onclick="verifierReponse('reponse3', '90', 'step5')">Valider</button>
+    <p id="message3"></p>
+</div>
+
+
+<div class="container hidden" id="step5">
+    <h2>Énigme 4 : Les Symboles Mystérieux✨</h2>
+    <img src="https://i.pinimg.com/736x/88/b9/e9/88b9e90e25e814575b262c0fe4a92edb.jpg" class="image" alt="Énigme 1">
+    <p>Mais comment est-ce possible de voir ce symbole en forme de soleil de partout alors qu'il s'agit du symbole du royaume dont Raiponce ignore totalement l'existence !✨</p>
+    <div id="notes">
+        <h3>Zone de notes ✍️</h3>
+        <textarea id="playerNotes" placeholder="Écrivez vos indices ici..."></textarea>
+    </div>
+    <button onclick="revealHint('indice4_1')">Voir indice 1</button>
+    <button onclick="revealHint('indice4_2')">Voir indice 2</button>
+    <p id="indice4_1" class="hidden">Indice 1 : Oh ! Il se pourrait que Raiponce ait un journal intime ! Et si on le cherchait ?📚📚</p>
+    <p id="indice4_2" class="hidden">Indice 2 : Certains symboles sont différents des autres... Voyons combien peut il y en avoir, et peut être même attraper une pièce de ce mystérieux puzzle...🧩🧩</p>
+    <input type="text" id="reponse4" placeholder="Entrez votre réponse">
+    <button onclick="verifierReponse('reponse4', '5', 'step6')">Valider</button>
+    <p id="message4"></p>
+</div>
+
+
+<div class="container hidden" id="step6">
+    <h2>Énigme 5 : L'horloge magique 🕰️✨</h2>
+    <img src="https://i.pinimg.com/474x/b0/d9/72/b0d972a0d573f8bba4ef6786d4cd3cbd.jpg" class="image" alt="Énigme 1">
+    <p>Mais quelle heure est-il ? Il se pourrait que la Mère Gothel revienne, le temps presse ! Dis donc elle ne fonctionne pas cette horloge...✨</p>
+    <div id="notes">
+        <h3>Zone de notes ✍️</h3>
+        <textarea id="playerNotes" placeholder="Écrivez vos indices ici..."></textarea>
+    </div>
+    <button onclick="revealHint('indice5_1')">Voir indice 1</button>
+    <button onclick="revealHint('indice5_2')">Voir indice 2</button>
+    <p id="indice5_1" class="hidden">Indice 1 : On dirait que ce n'est pas simplement une heure qui est indiquée...🕰️🕰️</p>
+    <p id="indice5_2" class="hidden">Indice 2 : Un livre remplit de citations ! Mais pourquoi faire ?📚📚📚, à quoi peut bien servir ce puzzle ?🧩</p>
+    <input type="text" id="reponse5" placeholder="Entrez votre réponse">
+    <button onclick="verifierReponse('reponse5', '1', 'step7')">Valider</button>
+    <p id="message5"></p>
+</div>
+
+   
+<div class="container hidden" id="step7">
+    <h2>Énigme 6 : La clef de la Tour✨</h2>
+    <img src="https://i.pinimg.com/736x/b2/7a/4b/b27a4b9e00f2f26cbc1f5c06233c17be.jpg" class="image" alt="Énigme 1">
+    <p>Il semblerait que Raiponce ait rangé des pinceaux dans le mauvais ordre...</p>
+    <div id="notes">
+        <h3>Zone de notes ✍️</h3>
+        <textarea id="playerNotes" placeholder="Écrivez vos indices ici..."></textarea>
+    </div>
+    <button onclick="revealHint('indice6_1')">Voir indice 1</button>
+    <button onclick="revealHint('indice6_2')">Voir indice 2</button>
+    <p id="indice6_1" class="hidden">Indice 1 : Le puzzle commence à s'assembler mais il reste une pièce encore, il faut bien chercher🧩🧩</p>
+    <p id="indice6_2" class="hidden">Indice 2 : Il est temps de reconstituer la pyramide : c'est une référence au royaume ! Un message se dessine...✨✨✨</p>
+    <input type="text" id="reponse6" placeholder="Entrez votre réponse">
+    <button onclick="verifierReponse('reponse6', '374', 'step8')">Valider</button>
+    <p id="message6"></p>
+</div>
+
+
+<div class="container hidden" id="step8">
+    <h2>Énigme 7 : Le pouvoir des fleurs 🌸🌸🌸</h2>
+    <img src="https://i.pinimg.com/474x/94/05/a5/9405a528189d0c149000429d118f7314.jpg" class="image" alt="Énigme 1">
+    <p>Vous êtes enfin dehors mais comment retrouver la princesse ?✨</p>
+    <div id="notes">
+        <h3>Zone de notes ✍️</h3>
+        <textarea id="playerNotes" placeholder="Écrivez vos indices ici..."></textarea>
+    </div>
+    <button onclick="revealHint('indice7_1')">Voir indice 1</button>
+    <button onclick="revealHint('indice7_2')">Voir indice 2</button>
+    <p id="indice7_1" class="hidden">Indice 1 : On dirait qu'ils aient laissé des indices trop évidents!✨✨</p>
+    <p id="indice7_2" class="hidden">Indice 2 : ILe bonheur enfin ?❤️❤️❤️</p>
+    <input type="text" id="reponse7" placeholder="Entrez votre réponse">
+    <button onclick="verifierReponse('reponse7', '4', 'end-screen')">Valider</button>
+    <p id="message7"></p>
+</div>   
+
+
+<div class="container hidden" id="end-screen">
+    <h2>Félicitations !⭐⭐⭐</h2>
+    <img src="https://i.pinimg.com/474x/cc/ec/94/ccec94704e9d24a3e017e83e53de5c4f.jpg" class="image" alt="Félicitations">
+    <p>Vous avez aidé Raiponce à s'échapper de la tour et à retrouver sa famille !⭐⭐⭐</p>
+    <p>Merci d'avoir participé à cet Escape Game, amusez-vous bien !⭐</p>
+    
+    <button onclick="launchConfetti()">🎉 Lancer les confettis 🎉</button>
+</div>
+
+<!-- Ajouter la bibliothèque pour les confettis -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<div id="victory-screen" class="hidden">
+    <h1>Bravo ! Vous avez retrouvé Raiponce ! 🎉</h1>
+    <img src="https://i.gifer.com/7hK.gif" alt="Raiponce Heureuse">
+    <p>Votre temps : <span id="final-time"></span></p>
+    <button onclick="restartGame()">Rejouer</button>
+</div>
+
+<script>
+    // Fonction pour lancer les confettis à la fin du jeu
+    function launchConfetti() {
+        confetti({
+            particleCount: 1000, // Nombre de confettis
+            spread: 180,         // Angle de dispersion des confettis
+            origin: { x: 0.5, y: 0.5 }, // Lancer à partir du centre de l'écran
+            colors: ['#ff0', '#ff4d4d', '#ffb3b3', '#ffcc00'], // Couleurs des confettis
+        });
+    }
+</script>
+
+<script>
+    let selectedAvatarUrl = "";
+
+function selectAvatar(element) {
+    console.log("Avatar cliqué :", element); // Vérifie que l'événement fonctionne
+    let avatars = document.querySelectorAll('.avatar');
+    avatars.forEach(avatar => avatar.classList.remove('selected-avatar'));
+    element.classList.add('selected-avatar');
+
+    selectedAvatarUrl = element.getAttribute('src'); 
+    console.log("Avatar sélectionné :", selectedAvatarUrl);
+}
+
+
+
+function saveCustomization() {
+    let pseudo = document.getElementById('pseudo').value.trim();
+    let color = document.getElementById('color').value;
+    let startButton = document.getElementById('start-button'); // ✅ Défini ici
+
+    if (startButton) {
+        startButton.style.display = "block";
+    } else {
+        console.error("Le bouton 'start-button' est introuvable !");
+    }
+
+    console.log("Pseudo:", pseudo);
+    console.log("Couleur:", color);
+    console.log("Avatar sélectionné:", selectedAvatarUrl);
+
+    if (pseudo === "") {
+        alert("Veuillez entrer un pseudo !");
+        return;
+    }
+
+    if (!selectedAvatarUrl) {
+        alert("Veuillez choisir un avatar !");
+        return;
+    }
+
+    localStorage.setItem("playerName", pseudo);
+    localStorage.setItem("playerColor", color);
+    localStorage.setItem("playerAvatar", selectedAvatarUrl);
+
+    document.documentElement.style.setProperty('--player-color', color);
+
+    document.getElementById("customization").classList.add("hidden"); 
+    document.getElementById("start-screen").classList.remove("hidden"); 
+}
+
+
+function startGame() {
+    console.log("🚀 Bouton cliqué !");
+    document.getElementById("start-screen").classList.add("hidden"); // Cache l'écran d'accueil
+    document.getElementById("step2").classList.remove("hidden"); // Affiche l'énigme 1
+}
+
+function revealHint(id) {
+    document.getElementById(id).classList.remove("hidden");
+}
+
+function verifierReponse(inputId, correctAnswer, nextStepId) {
+    let userAnswer = document.getElementById(inputId).value.trim();
+    console.log("Réponse utilisateur :", userAnswer);
+    console.log("Bonne réponse attendue :", correctAnswer);
+
+    // Vérifier si la bonne réponse est un nombre (en convertissant la réponse attendue en nombre)
+    if (!isNaN(Number(correctAnswer))) {  
+        // Si la bonne réponse est un nombre, convertir l'entrée utilisateur en nombre
+        if (Number(userAnswer) === Number(correctAnswer)) {
+            afficherBonneReponse(nextStepId);
+            return;
+        }
+    } 
+    // Comparaison des mots en texte (insensible à la casse)
+    else {
+        if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {  
+            afficherBonneReponse(nextStepId);
+            return;
+        }
+    }
+
+    afficherMauvaiseReponse();
+}
+
+function afficherBonneReponse(nextStepId) {
+    alert("Bonne réponse !");
+
+    // Trouver l'étape actuelle et la cacher dynamiquement
+    let currentStep = document.querySelector('.container:not(.hidden)'); 
+    if (currentStep) {
+        currentStep.classList.add("hidden");  // On cache l'étape actuelle
+    }
+
+    // Afficher la prochaine étape
+    document.getElementById(nextStepId).classList.remove("hidden");
+    console.log("Transition vers :", nextStepId, "Réussie ✅");
+}
+
+function afficherMauvaiseReponse() {
+    alert("Mauvaise réponse, essayez encore !");
+    console.log("Réponse incorrecte ❌");
+}
+
+</script>
+
+
+<!-- Musique de fond et bouton pour activer/désactiver -->
+<audio id="bg-music" autoplay loop>
+    <source src="escape-room-300563.mp3">
+    Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<button onclick="toggleMusic()">🎵 Activer/Désactiver la musique</button>
+
+<script>
+    // Fonction pour activer/désactiver la musique
+    function toggleMusic() {
+        var music = document.getElementById("bg-music");
+        if (music.paused) {
+            music.play();
+        } else {
+            music.pause();
+        }
+    }
+let inventory = [];
+
+function collectItem(itemName) {
+    if (!inventory.includes(itemName)) {
+        inventory.push(itemName);
+        alert(`Vous avez trouvé : ${itemName} !`);
+        updateInventoryDisplay();
+    } else {
+        alert("Vous avez déjà cet objet !");
+    }
+}
+
+function updateInventoryDisplay() {
+    let inventoryText = inventory.length > 0 ? inventory.join(", ") : "Aucun objet";
+    document.getElementById("inventory-items").innerText = inventoryText;
+}
+function goToNextStep(currentStep, nextStep) {
+    document.getElementById(currentStep).classList.remove("visible");
+    document.getElementById(currentStep).classList.add("hidden");
+    
+    setTimeout(() => {
+        document.getElementById(nextStep).classList.remove("hidden");
+        document.getElementById(nextStep).classList.add("visible");
+    }, 1000); 
+}
+
+</script>
+<style>
+#start-button {
+    display: block;
+    margin: 20px auto; /* Centre le bouton horizontalement */
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #6a0dad; /* Un joli violet rappelant Raiponce */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    position: fixed;
+    bottom: 20px; /* Place le bouton en bas */
+    left: 50%;
+    transform: translateX(-50%); /* Centre parfaitement */
+}
+
+#start-button:hover {
+    background-color: #8a2be2; /* Un violet un peu plus clair */
+    transform: translateX(-50%) scale(1.1); /* Effet d’agrandissement au survol */
+}
+</style>
+</body>
+</htlm>
